@@ -1,5 +1,7 @@
 # (C) Copyright 2019-2023 Hewlett Packard Enterprise Development LP.
 # Apache License 2.0
+# This file has been changed in the fork in order to remove Singleton
+# behavior from the Device class.
 
 from copy import deepcopy
 
@@ -17,8 +19,9 @@ from pyaoscx.pyaoscx_factory import PyaoscxFactory, Singleton
 from pyaoscx.pyaoscx_module import PyaoscxModule
 
 
-class Device(PyaoscxFactory, metaclass=Singleton):
+class Device(PyaoscxFactory):
     """
+    Forked Device class in order to remove Singleton behavior.
     Represents a Device and all of its attributes. Keeping all the important
         information inside one class.
     """
